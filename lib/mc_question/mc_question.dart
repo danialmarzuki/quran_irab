@@ -33,18 +33,18 @@ class _MultipleChoiceQuestionState extends State<MultipleChoiceQuestion> {
         elevation: 0,
         leading: IconButton(
           onPressed: () {},
-          icon: Icon(Icons.menu),
+          icon: const Icon(Icons.menu),
           color: Colors.amber.shade900,
         ),
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.settings),
+            icon: const Icon(Icons.settings),
             color: Colors.amber.shade900,
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.language),
+            icon: const Icon(Icons.language),
             color: Colors.amber.shade900,
           ),
         ],
@@ -70,7 +70,7 @@ class _MultipleChoiceQuestionState extends State<MultipleChoiceQuestion> {
             width: size.width,
             child: Container(
               width: 50,
-              margin: EdgeInsets.fromLTRB(35, 50, 35, 0),
+              margin: const EdgeInsets.fromLTRB(35, 50, 35, 0),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(5),
@@ -108,6 +108,8 @@ class _MultipleChoiceQuestionState extends State<MultipleChoiceQuestion> {
                         size: size,
                         color: Colors.white,
                         text: item,
+                        isCorrect: item ==
+                            question.options[question.correctAnswerIndex],
                       ),
                   ],
                 ),

@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 
- class AnswerChoice extends StatefulWidget {
+class AnswerChoice extends StatefulWidget {
   const AnswerChoice({
     super.key,
-
     required this.question,
     required this.isSelected,
     required this.correctAnswerIndex,
     required this.selectedAnswerIndex,
     required this.currentIndex,
-
   });
 
   final String question;
@@ -24,43 +22,38 @@ import 'package:flutter/material.dart';
     bool isWrongAnswer = !isCorrectAnswer && isSelected;
 
     return Padding(
-
         padding: const EdgeInsets.symmetric(
           vertical: 10.0,
         ),
-
-        child:
-        Container(
+        child: Container(
           height: 70,
           padding: const EdgeInsets.all(16.0),
           decoration: BoxDecoration(
-              color: Colors.white24,
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(
-                  width: 2,
-                  color: isCorrectAnswer
-                      ? Colors.green
-                      : isWrongAnswer
+            color: Colors.white24,
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(
+              width: 2,
+              color: isCorrectAnswer
+                  ? Colors.green
+                  : isWrongAnswer
                       ? Colors.red
                       : Colors.white,
-              ),
+            ),
           ),
-          child: Row(
+          child: const Row(
             children: [
               Expanded(
                 child: Text(
                   '',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 16,
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
-
+              SizedBox(height: 10),
             ],
           ),
-        )
-    );
+        ));
   }
 
   // ListView.builder(
