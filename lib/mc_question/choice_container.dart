@@ -2,7 +2,7 @@ import 'package:cool_alert/cool_alert.dart';
 import 'package:flutter/material.dart';
 
 class ChoiceContainer extends StatelessWidget {
-  ChoiceContainer({
+  const ChoiceContainer({
     super.key,
     required this.size,
     required this.color,

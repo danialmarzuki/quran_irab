@@ -51,37 +51,39 @@ class _MultipleChoiceQuestionState extends State<MultipleChoiceQuestion> {
       ),
       body: Column(
         children: [
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(3),
-              border: Border.all(
-                color: Colors.amber.shade600,
-              ),
-              gradient: const LinearGradient(
-                colors: [
-                  Color(0xFFFFBB7C),
-                  Color(0xFFFFECB3),
-                ],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ),
-            ),
-            height: 300,
-            width: size.width,
+          Flexible(
             child: Container(
-              width: 50,
-              margin: const EdgeInsets.fromLTRB(35, 50, 35, 0),
               decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(5),
+                borderRadius: BorderRadius.circular(3),
                 border: Border.all(
-                  color: Colors.amber.shade300,
+                  color: Colors.amber.shade600,
+                ),
+                gradient: const LinearGradient(
+                  colors: [
+                    Color(0xFFFFBB7C),
+                    Color(0xFFFFECB3),
+                  ],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
                 ),
               ),
-              child: Center(
-                child: Text(
-                  question.question,
-                  style: const TextStyle(fontSize: 20),
+              height: 300,
+              width: size.width,
+              child: Container(
+                width: 50,
+                margin: const EdgeInsets.fromLTRB(35, 50, 35, 50),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(5),
+                  border: Border.all(
+                    color: Colors.amber.shade300,
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    question.question,
+                    style: const TextStyle(fontSize: 20),
+                  ),
                 ),
               ),
             ),
@@ -89,7 +91,6 @@ class _MultipleChoiceQuestionState extends State<MultipleChoiceQuestion> {
           Column(
             children: [
               Container(
-                height: 362,
                 width: size.width,
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
@@ -102,6 +103,7 @@ class _MultipleChoiceQuestionState extends State<MultipleChoiceQuestion> {
                   ),
                 ),
                 child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     for (var item in question.options)
                       ChoiceContainer(
